@@ -11,9 +11,8 @@ def format_student(student):
     del student["_id"]
     return student
 
-# Home Route
-@router.get("/", status_code=200)
-async def home():
+@router.get("/")
+async def read_root():
     return {"message": "Server is running."}
 
 @router.post("/students", status_code=201)
