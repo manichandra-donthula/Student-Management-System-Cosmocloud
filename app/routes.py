@@ -11,6 +11,11 @@ def format_student(student):
     del student["_id"]
     return student
 
+# Home Route
+@router.get("/", status_code=200)
+async def home():
+    return {"message": "Server is running."}
+
 @router.post("/students", status_code=201)
 async def create_student(student: StudentCreateModel):
     new_student = student.dict()
